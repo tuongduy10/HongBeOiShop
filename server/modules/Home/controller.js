@@ -1,18 +1,30 @@
-var MongoClient = require('mongodb').MongoClient;
+const Perfume = require('./model');
 
-module.exports.home = function (req, res) {
-    MongoClient.connect(process.env.dbUrl, function (err, db) {
-        if (err) throw err;
-        var dbo = db.db(process.env.dbName);
-        dbo.collection("Perfume").find({}).toArray(function (err, result) {
-            if (err) throw err;
+module.exports.index = function (req, res) {
+    Perfume.find()
+        .then(function(result){
+            res.json({status: "success", data: result})
+        })
+        .catch(function(error){
+            res.json({status: "error", data: error})
+        })
+}
 
-            res.json({
-                status: "success",
-                data: result,
-            })
-
-            db.close();
-        });
-    });
+module.exports.add = function (req, res) {
+    const perfume = new Perfume({
+        Perfume_Name:"Nước hoa xịn 03",
+        Perfume_Price:10000000000,
+        Perfume_Image:"test",
+        Perfume_Description:"Nước hoa 03 này rất thơm",
+        Type:{
+            "New": "5%",
+        }
+    }) 
+    perfume.save()
+        .then(function(result){
+            res.json({status: "success", data: result})
+        })
+        .catch(function(error){
+            res.json({status: "error", data: error})
+        })
 }
