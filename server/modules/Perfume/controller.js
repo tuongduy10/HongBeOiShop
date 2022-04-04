@@ -11,6 +11,17 @@ module.exports.index = function (req, res) {
         })
 }
 
+module.exports.findbyid = function (req, res) {
+    var id = new ObjectId((req.query.id).trim())
+    PerfumeModel.findById(id)
+        .then(function(result){
+            res.json({status: "success", data: result})
+        })
+        .catch(function(result){
+            res.json({status: "error", data: result})
+        })
+}
+
 module.exports.add = function (req, res) {
     var name = req.body.name;
     var price = req.body.price;
@@ -34,9 +45,22 @@ module.exports.add = function (req, res) {
             res.json({status: "error", data: error})
         })
 }
-module.exports.findbyid = function (req, res) {
-    var id = new ObjectId((req.query.id).trim())
-    PerfumeModel.findById(id)
+
+module.exports.update = function (req, res) {
+    var id = new ObjectId((req.query.id).trim());
+    var name = req.body.name;
+    var price = req.body.price;
+    var image = req.body.image;
+    var desciption = req.body.desciption;
+    var type = req.body.type;
+
+    PerfumeModel.findByIdAndUpdate(id, {
+        Perfume_Name: name,
+        Perfume_Price: price,
+        Perfume_Iamge: image,
+        Perfume_Description: desciption,
+        Perfume_Type: type
+    })
         .then(function(result){
             res.json({status: "success", data: result})
         })
@@ -45,20 +69,12 @@ module.exports.findbyid = function (req, res) {
         })
 }
 module.exports.delete = function (req, res) {
-    const Perfume = new PerfumeModel({
-        Perfume_Name:"Nước hoa xịn 01",
-        Perfume_Price:10000000000,
-        Perfume_Image:"test",
-        Perfume_Description:"Nước hoa 01 này rất thơm",
-        Type:{
-            "New": "4%",
-        }
-    }) 
-    Perfume.save()
+    var id = new ObjectId((req.query.id).trim())
+    PerfumeModel.findByIdAndDelete(id)
         .then(function(result){
             res.json({status: "success", data: result})
         })
-        .catch(function(error){
-            res.json({status: "error", data: error})
+        .catch(function(result){
+            res.json({status: "error", data: result})
         })
 }
