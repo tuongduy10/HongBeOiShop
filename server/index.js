@@ -1,13 +1,16 @@
 const express = require('express');
 require('dotenv').config();
 
+require('./config/database');
+
 const app = express();
 const port = 3000;
 
-const routerHome = require("./routes/Home")
+app.use(express.json()) 
 
+const routerPerfume = require("./routes/Perfume")
 
-app.use("/", routerHome)
+app.use("/perfume", routerPerfume)
 
 app.listen(port, function(error){
     if (error) {
@@ -15,3 +18,5 @@ app.listen(port, function(error){
     }
     console.log("server is running port:  http://localhost:" + port);
 })
+
+module.exports = app
