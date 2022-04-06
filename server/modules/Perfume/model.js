@@ -1,14 +1,13 @@
-const { Decimal128 } = require('mongodb');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const PerfumeSchema = new Schema({
+const schema = new Schema({
     Perfume_Name:{
         type: String,
         required: true
     },
     Perfume_Price:{
-        type: Decimal128,
+        type: Schema.Types.Decimal128,
         required: true,
     },
     Perfume_Image:{
@@ -25,5 +24,5 @@ const PerfumeSchema = new Schema({
     }
 }, {timestamps: true});
 
-const Perfume = mongoose.model('Perfume', PerfumeSchema);
+const Perfume = mongoose.model('Perfume', schema);
 module.exports = Perfume;

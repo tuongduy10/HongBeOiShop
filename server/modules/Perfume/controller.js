@@ -1,7 +1,7 @@
 const PerfumeModel = require('./model');
 const ObjectId = require('mongodb').ObjectID;
 
-module.exports.index = function (req, res) {
+module.exports.findall = function (req, res) {
     PerfumeModel.find()
         .then(function(result){
             res.json({status: "success", data: result})

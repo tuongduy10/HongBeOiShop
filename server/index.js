@@ -1,12 +1,16 @@
 const express = require('express');
-require('dotenv').config();
+const session = require('express-session');
 
+require('dotenv').config();
 require('./config/database');
 
 const app = express();
 const port = 3000;
 
 app.use(express.json()) 
+app.use(session({
+    secret: 'muadibe'
+}))
 
 const routerPerfume = require("./routes/Perfume")
 
