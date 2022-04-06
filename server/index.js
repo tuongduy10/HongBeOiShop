@@ -3,6 +3,7 @@ const session = require('express-session');
 
 require('dotenv').config();
 require('./config/database');
+require('./config/seeding');
 
 const app = express();
 const port = 3000;
