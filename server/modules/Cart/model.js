@@ -19,7 +19,13 @@ const Cart = function(currentCart){
         this.totalQty++;
         this.totalPrice += storedItem.price;
     }
-    this.generateArray = {}
+    this.generateArray = function(){
+        var arr = [];
+        this.items.forEach(element => {
+            arr.push(element);
+        });
+        return arr;
+    }
 }
 
 module.exports = Cart

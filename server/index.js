@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const { default: mongoose } = require('mongoose');
 
 require('dotenv').config();
 require('./config/database');
@@ -9,9 +10,14 @@ const app = express();
 const port = 3000;
 
 app.use(express.json()) 
+const MongoStore = require('connect-mongo');
 app.use(session({
-    secret: 'muadibe'
+    secret: 'muadibe',
+    resave: false,
+    saveUninitialized: false,
+    cookie: { maxAge: 100 * 60 * 1000 }
 }))
+
 
 const routerPerfume = require("./routes/Perfume")
 const routerAdmins = require("./routes/Admins")
