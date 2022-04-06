@@ -14,8 +14,15 @@ app.use(session({
 }))
 
 const routerPerfume = require("./routes/Perfume")
+const routerAdmins = require("./routes/Admins")
+const routerUsers = require("./routes/Users")
+const routerContact = require("./routes/Contact")
+
 
 app.use("/perfume", routerPerfume)
+app.use("/admins", routerAdmins)
+app.use("/users", routerUsers)
+app.use("/contact", routerContact)
 
 app.listen(port, function(error){
     if (error) {

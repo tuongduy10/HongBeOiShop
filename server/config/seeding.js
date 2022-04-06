@@ -1,5 +1,5 @@
 const perfume = require("../modules/Perfume/model");
-const admin = require("../modules/Admin/model");
+const admin = require("../modules/Admins/model");
 const contact = require("../modules/Contact/model");
 const users = require("../modules/Users/model");
 
@@ -61,7 +61,7 @@ contact.find().then(function(item){
 users.find().then(function(item){
     if(item.length == 0 ){
         new users({
-            User_Name: "h04ngb1",
+            User_Name: "h04n9Bjj",
             User_Password: "passla1",
             User_Email: "nhokbi35@gmail.com",
             User_Address: "phường không số, phố không em",
@@ -71,4 +71,3 @@ users.find().then(function(item){
         console.log("User Added")
     }
 })
-

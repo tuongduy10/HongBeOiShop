@@ -1,8 +1,8 @@
-const UsersModel = require('./model');
+const AdminsModel = require('./model');
 const ObjectId = require('mongodb').ObjectID;
 
 module.exports.findall = function (req, res) {
-    UsersModel.find()
+    AdminsModel.find()
         .then(function(result){
             res.json({status: "success", data: result})
         })
@@ -13,7 +13,7 @@ module.exports.findall = function (req, res) {
 
 module.exports.findbyid = function (req, res) {
     var id = new ObjectId((req.query.id).trim())
-    UsersModel.findById(id)
+    AdminsModel.findById(id)
         .then(function(result){
             res.json({status: "success", data: result})
         })
@@ -26,19 +26,19 @@ module.exports.add = function (req, res) {
     var name = req.body.name;
     var pass = req.body.pass;
     var email = req.body.email;
-    var address = req.body.address;
+    var position = req.body.position;
     var phone = req.body.phone;
 
-    const Users = new UsersModel({
-        User_Name: name,
-        User_Password: pass,
-        User_Email: email,
-        User_Address: address,
-        User_Tele: phone
+    const Admins = new AdminsModel({
+        Ad_Name: name,
+        Ad_Password: pass,
+        Ad_Email: email,
+        Ad_Phone: phone,
+        Ad_Position: position
 
     }) 
 
-    Users.save()
+    Admins.save()
         .then(function(result){
             res.json({status: "success", data: "Add successfully"})
         })
@@ -52,15 +52,15 @@ module.exports.update = function (req, res) {
     var name = req.body.name;
     var pass = req.body.pass;
     var email = req.body.email;
-    var address = req.body.address;
+    var position = req.body.position;
     var phone = req.body.phone;
 
-    UsersModel.findByIdAndUpdate(id, {
-        User_Name: name,
-        User_Password: pass,
-        User_Email: email,
-        User_Address: address,
-        User_Tele: phone
+    AdminsModel.findByIdAndUpdate(id, {
+        Ad_Name: name,
+        Ad_Password: pass,
+        Ad_Email: email,
+        Ad_Phone: phone,
+        Ad_Position: position
 
     })
         .then(function(result){
@@ -72,7 +72,7 @@ module.exports.update = function (req, res) {
 }
 module.exports.delete = function (req, res) {
     var id = new ObjectId((req.query.id).trim())
-    UsersModel.findByIdAndDelete(id)
+    AdminsModel.findByIdAndDelete(id)
         .then(function(result){
             res.json({status: "success", data: result})
         })

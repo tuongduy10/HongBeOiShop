@@ -35,7 +35,7 @@ const schema = new Schema({
         type: Date ,
         required: true,
     },
-    Ad_Id:{
+    Ad_ID:{
         type: Schema.Types.ObjectId ,
         required: true,
     }
