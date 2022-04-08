@@ -1,6 +1,21 @@
 const UsersModel = require('./model');
 const ObjectId = require('mongodb').ObjectID;
 
+module.exports.login = function(req, res){
+    UsersModel.find({User_Name: req.body.username})
+        .then(function(result){
+            console.log(req.body.password)
+            if(result.User_Password == req.body.password){
+                res.json({status: "success", data: "Login successfully !"});
+                return;
+            }
+            res.json({status: "error", data: "Fail to login"});
+        })
+        .catch(function(error){
+            res.json({status: "error", data: "Fail to login"});
+        })
+}
+
 module.exports.findall = function (req, res) {
     UsersModel.find()
         .then(function(result){

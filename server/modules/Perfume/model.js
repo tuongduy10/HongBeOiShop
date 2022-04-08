@@ -7,7 +7,7 @@ const schema = new Schema({
         required: true
     },
     Perfume_Price:{
-        type: Schema.Types.Decimal128,
+        type: Number,
         required: true,
     },
     Perfume_Image:{
@@ -21,6 +21,9 @@ const schema = new Schema({
     Type:{
         type: Object,
         required: true,
+    },
+    Gender: {
+        type: String
     }
 }, {timestamps: true});
 

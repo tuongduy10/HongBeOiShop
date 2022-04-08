@@ -10,7 +10,6 @@ const app = express();
 const port = 3000;
 
 app.use(express.json()) 
-const MongoStore = require('connect-mongo');
 app.use(session({
     secret: 'muadibe',
     resave: false,
@@ -23,12 +22,13 @@ const routerPerfume = require("./routes/Perfume")
 const routerAdmins = require("./routes/Admins")
 const routerUsers = require("./routes/Users")
 const routerContact = require("./routes/Contact")
-
+const routerCart = require("./routes/Cart");
 
 app.use("/perfume", routerPerfume)
 app.use("/admins", routerAdmins)
 app.use("/users", routerUsers)
 app.use("/contact", routerContact)
+app.use("/cart", routerCart)
 
 app.listen(port, function(error){
     if (error) {
