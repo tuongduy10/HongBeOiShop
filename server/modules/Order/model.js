@@ -15,6 +15,10 @@ const schema = new Schema({
         type: String,
         required: true,
     },
+    Products: {
+        type: Array,
+        required: true
+    },
     Order_Status:{
         type: String,
         required: true,

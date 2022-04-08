@@ -10,7 +10,6 @@ module.exports.findall = function (req, res) {
             res.json({status: "error", data: error})
         })
 }
-
 module.exports.findbyid = function (req, res) {
     var id = new ObjectId((req.query.id).trim())
     PerfumeModel.findById(id)
@@ -21,7 +20,6 @@ module.exports.findbyid = function (req, res) {
             res.json({status: "error", data: result})
         })
 }
-
 module.exports.add = function (req, res) {
     var name = req.body.name;
     var price = req.body.price;
@@ -45,7 +43,6 @@ module.exports.add = function (req, res) {
             res.json({status: "error", data: error})
         })
 }
-
 module.exports.update = function (req, res) {
     var id = new ObjectId((req.query.id).trim());
     var name = req.body.name;

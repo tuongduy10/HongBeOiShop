@@ -13,7 +13,8 @@ perfume.find().then(function(item){
             Perfume_Description: "Nước hoa quyến rũ tối về ngủ với em",
             Type:{
                 "Độ cồn": "5%"
-            }
+            },
+            Gender: "Nam"
         }).save()
         new perfume({
             Perfume_Name: "Nước hoa 02",
@@ -22,7 +23,8 @@ perfume.find().then(function(item){
             Perfume_Description: "Nước hoa quyến rũ tối về ngủ với em",
             Type:{
                 "Độ cồn": "5%"
-            }
+            },
+            Gender: "Nu"
         }).save()
 
         console.log('Parfume seeded')
