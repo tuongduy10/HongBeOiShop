@@ -2,18 +2,17 @@ const UsersModel = require('./model');
 const ObjectId = require('mongodb').ObjectID;
 
 module.exports.login = function(req, res){
-    UsersModel.find({User_Name: req.body.username})
-        .then(function(result){
-            console.log(req.body.password)
-            if(result.User_Password == req.body.password){
-                res.json({status: "success", data: "Login successfully !"});
-                return;
-            }
-            res.json({status: "error", data: "Fail to login"});
-        })
-        .catch(function(error){
-            res.json({status: "error", data: "Fail to login"});
-        })
+    UsersModel.findOne({User_Name: req.body.username, User_Password: req.body.password}, function(error, user){
+        if(error) res.json({status: "error", data: "Fail to login"});
+
+        if(!user) res.json({status: "error", data: "Fail to login"});
+
+        if(user) {
+            req.session.user = user
+            res.json({status: "success", data: "Login successfully !"});
+        }
+    })
+    
 }
 
 module.exports.findall = function (req, res) {
@@ -50,7 +49,6 @@ module.exports.add = function (req, res) {
         User_Email: email,
         User_Address: address,
         User_Tele: phone
-
     }) 
 
     Users.save()
@@ -76,7 +74,6 @@ module.exports.update = function (req, res) {
         User_Email: email,
         User_Address: address,
         User_Tele: phone
-
     })
         .then(function(result){
             res.json({status: "success", data: result})
