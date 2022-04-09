@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const cors = require("cors");
 const { default: mongoose } = require('mongoose');
 
 require('dotenv').config();
@@ -9,6 +10,7 @@ require('./config/seeding');
 const app = express();
 const port = 3001;
 
+app.use(cors());
 app.use(express.json()) 
 app.use(session({
     secret: 'muadibe',

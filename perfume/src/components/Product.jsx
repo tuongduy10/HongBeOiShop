@@ -9,10 +9,10 @@ const Product = ({item}) => {
       
         <div className="product-wrapper">        
            <div className="product-item">
-            <img src={item.image} alt="" />
+            <img src={item.Perfume_Image} alt="" />
             <div className="product-description">
-              <h5>{item.title}</h5>
-              <h4>{item.price}</h4>
+              <h5>{item.Perfume_Name}</h5>
+              <h4>{item.Perfume_Price}</h4>
             </div>
             <div className="cart-icon">
               <a href=".">
