@@ -1,0 +1,240 @@
+
+h2{
+    font-size: 46px;
+    color: #222;
+    line-height: 54px;
+}
+
+h4{
+    font-size: 20px;
+    color: #222;
+}
+
+h6{
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* p{
+    font-size: 16px;
+    color: #465b52;
+} */
+
+.section-p1{
+    padding: 40px 60px;
+}
+/* --------------------------------------------------------------------------------- */
+/* Register */
+.reg-container{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    align-items: center;
+    justify-content: center;   
+    background-image: url(../assets/city.png);
+    background-position: 50% 30%;
+}
+
+.reg-wrapper{
+    width: 40%;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid silver;
+}
+
+.reg-wrapper .title{
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.reg-wrapper form{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.reg-wrapper input{
+    flex: 1;
+    min-width: 40%;
+    margin: 20px 10px 0 0;
+    padding: 10px;
+    border: 1px solid silver;
+}
+
+/* --------------------------------------------------------------------------------- */
+/* Login */
+.login-container{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    align-items: center;
+    justify-content: center;   
+    background-image: url(../assets/city.png);
+    background-position: 50% 30%;
+}
+
+.login-wrapper{
+    width: 25%;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.login-wrapper .title{
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.login-wrapper form{
+    display: flex;
+    flex-direction: column;
+}
+
+.login-wrapper input{
+    flex: 1;
+    min-width: 40%;
+    margin: 20px 10px 0 0;
+    padding: 10px;
+    border: 1px solid silver;  
+}
+
+.login-wrapper .forget-pwd{
+    padding: 20px 20px 0 0;
+}
+
+/*  */
+button.normal{
+    padding: 15px 30px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+/* --------------------------------------------------------------------------------- */
+/* Single Product */
+.product-wrapper-p{
+    display: flex;
+    padding: 50px;
+}
+
+.img-container-p{
+    flex: 1;
+}
+
+.img-container-p img{
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+}
+
+.product-info-p{
+    flex: 1;
+    padding: 0px 50px;
+}
+
+.add-container{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.amount-container{
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------------- */
+/* Cart */
+.cart-wrapper{
+    padding: 20px;
+}
+
+.cart-top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-info{
+    flex: 3;
+}
+
+.cart-product{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.cart-product-detail{
+    flex: 2;
+    display: flex;
+}
+
+.cart-product-detail img{
+    width: 25%;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+.cart-price-detail{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-amount-container{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-amount{
+    margin: 5px;
+    font-style: 24px;
+}
+
+.cart-info-del{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-summary{
+    flex: 1;
+    border: 0.5px solid lightgray;
+    border-radius: 10px;
+    padding: 20px;
+    height: 50vh;
+}
+
+.summary-item{
+    display: flex;
+    margin: 30px 0px;
+    justify-content: space-between;
+}
+
+.cart-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 0 0;
+}
