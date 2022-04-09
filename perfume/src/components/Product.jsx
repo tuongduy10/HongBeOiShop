@@ -4,9 +4,8 @@ import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 
 const Product = ({item}) => {
   return (
-    <div className="section-p1">
+    <div className="section-p1" onClick={productDetail}>
       <div className="product-container">
-      
         <div className="product-wrapper">        
            <div className="product-item">
             <img src={item.Perfume_Image} alt="" />
@@ -25,6 +24,9 @@ const Product = ({item}) => {
       </div>
     </div>
   )
+}
+function productDetail(){
+  window.location = '/product';
 }
 
 export default Product

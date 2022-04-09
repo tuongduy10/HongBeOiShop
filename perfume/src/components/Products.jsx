@@ -1,7 +1,10 @@
 import React, { Component, useState, useEffect } from 'react'
 import { products } from "../data";
 import Product from './Product';
+import {Navigate, useNavigate} from 'react-router-dom'
 import '../components/Style.css';
+
+// const navigate = useNavigate()
 
 export default class Products extends Component{
   constructor(props){
@@ -31,11 +34,12 @@ export default class Products extends Component{
       return(
         <div className="prods-container">
             {products.map((item) => (
-                <Product item={item} key={item._id}/>
+                <Product item={item} key={item._id} />
             ))}
         </div>
       )
     }
   }
 }
+
 
