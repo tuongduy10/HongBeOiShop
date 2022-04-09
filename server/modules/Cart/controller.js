@@ -10,6 +10,10 @@ module.exports.addToCart = function (req, res) {
         if(error){
             return res.redirect('/');
         }
+        if(!req.session.user){
+            res.json({status: "error", message: "Fail to add"});
+            return;
+        }
 
         cart.add(perfume, perfume._id);
         req.session.cart = cart;
