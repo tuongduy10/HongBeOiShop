@@ -68,7 +68,7 @@ perfume.find().then(function(item){
                 "Độ cồn": "5%"
             },
             Gender: "Nu"
-        }).save()
+        }).save()      
 
         console.log('Parfume seeded')
     }

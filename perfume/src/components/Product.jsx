@@ -3,6 +3,10 @@ import '../components/Style.css';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 
 const Product = ({item}) => {
+  function productDetail(){
+    window.location = `/product?id=${item._id}`;
+  }
+
   return (
     <div className="section-p1" onClick={productDetail}>
       <div className="product-container">
@@ -14,7 +18,7 @@ const Product = ({item}) => {
               <h4>{item.Perfume_Price}</h4>
             </div>
             <div className="cart-icon">
-              <a href=".">
+              <a href="/cart">
               <ShoppingBagOutlinedIcon style={{color: "#ff3c00"}}></ShoppingBagOutlinedIcon>
               </a>
             </div>
@@ -25,8 +29,7 @@ const Product = ({item}) => {
     </div>
   )
 }
-function productDetail(){
-  window.location = '/product';
-}
+
+
 
 export default Product

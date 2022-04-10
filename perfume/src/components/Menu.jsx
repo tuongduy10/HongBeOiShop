@@ -6,16 +6,16 @@ const Menu = () => {
     <div className="navbar-container">
         <div className="menu-item-wrapper">
             <div className="menu-item-prod">
-                TRANG CHỦ
+                <a href="/">TRANG CHỦ</a>
             </div>
             <div className="menu-item-prod">
-                SẢN PHẨM
+                <a href="/products">SẢN PHẨM</a>
             </div>
             <div className="menu-item-prod">
-                LIÊN HỆ
+                <a href="/">LIÊN HỆ</a>              
             </div>
             <div className="menu-item-prod">
-                VỀ CHÚNG TÔI
+                <a href="/">VỀ CHÚNG TÔI</a>               
             </div>
         </div>
     </div>

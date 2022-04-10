@@ -10,14 +10,11 @@ const Navbar = () => {
         <div className="wrapper">
             <div className="left">
                 <div className="menu-item">
-                    CONTACT
-                </div>
-                <div className="menu-item">
-                    REGISTER
+                    <a href="./register">REGISTER</a>
                 </div>
                 <div className="menu-item" style={{display: 'flex'}}>
                     <AccountCircle style={{color: "#0f1827", fontSize: 25}} />
-                    <p style={{paddingTop: '3px'}}>SIGN IN</p>
+                    <p style={{paddingTop: '3px'}}><a href="/login">SIGN IN</a></p>
                 </div>
             </div>
             <div className="center">
@@ -32,7 +29,7 @@ const Navbar = () => {
                 </div>
                 <div className="menu-item">
                     <Badge badgeContent={6} color="success">
-                        <ShoppingCartOutlinedIcon style={{color: "#0f1827", fontSize: 25}}/>
+                        <a href="/cart"><ShoppingCartOutlinedIcon style={{color: "#0f1827", fontSize: 25}}/></a>
                     </Badge>
                 </div>
                 <div className="menu-item">

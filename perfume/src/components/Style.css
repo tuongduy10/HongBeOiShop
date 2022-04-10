@@ -21,7 +21,7 @@ p{
 }
 
 .section-p1{
-    padding: 15px 60px;
+    padding: 40px 60px;
 }
 
 /* ---------------------------------------------------------------- */
@@ -142,7 +142,7 @@ p{
 /* Categories */
 .cate-container{
     display: flex;
-    padding: 20px;
+    padding: 30px;
     justify-content: space-between;
 }
 /* --- */
@@ -214,6 +214,7 @@ p{
     /* position: relative; */
     width: 25%;
     min-width: 250px;
+    min-height: 400px;
     margin: 15px 0;
     padding: 10px 12px;
     border: 1px solid silver;
@@ -228,6 +229,7 @@ p{
 
 .product-container .product-item img{
     width: 100%;
+    height: 250px;
     border-radius: 10px;
 }
 

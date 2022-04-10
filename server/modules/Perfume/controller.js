@@ -1,6 +1,7 @@
 const PerfumeModel = require('./model');
 const ObjectId = require('mongodb').ObjectID;
 
+
 module.exports.findall = function (req, res) {
     PerfumeModel.find()
         .then(function(result){
@@ -11,7 +12,8 @@ module.exports.findall = function (req, res) {
         })
 }
 module.exports.findbyid = function (req, res) {
-    var id = new ObjectId((req.query.id).trim())
+    var id = req.query.id
+    console.log(id)
     PerfumeModel.findById(id)
         .then(function(result){
             res.json({status: "success", data: result})
@@ -26,13 +28,15 @@ module.exports.add = function (req, res) {
     var image = req.body.image;
     var desciption = req.body.desciption;
     var type = req.body.type;
+    var gender = reg.body.gender;
 
     const Perfume = new PerfumeModel({
         Perfume_Name: name,
         Perfume_Price: price,
         Perfume_Image: image,
         Perfume_Description: desciption,
-        Type: type
+        Type: type,
+        Gender: gender
     }) 
 
     Perfume.save()
@@ -50,13 +54,15 @@ module.exports.update = function (req, res) {
     var image = req.body.image;
     var desciption = req.body.desciption;
     var type = req.body.type;
+    var gender = req.body.gender;
 
     PerfumeModel.findByIdAndUpdate(id, {
         Perfume_Name: name,
         Perfume_Price: price,
         Perfume_Iamge: image,
         Perfume_Description: desciption,
-        Perfume_Type: type
+        Perfume_Type: type,
+        Gender: gender
     })
         .then(function(result){
             res.json({status: "success", data: result})

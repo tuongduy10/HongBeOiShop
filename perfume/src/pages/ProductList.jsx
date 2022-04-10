@@ -4,8 +4,8 @@ import Navbar from '../components/Navbar'
 import Menu from '../components/Menu'
 import Products from '../components/Products'
 
-
 const ProductList = () => {
+
   return (
     <div>
       <Announcement/>
