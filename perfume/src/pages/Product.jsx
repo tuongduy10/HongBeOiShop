@@ -29,7 +29,8 @@ const Product = () => {
     const _id = new URLSearchParams(search).get('id');
     const [product, setProduct] = useState(undefined);
     React.useEffect(()=>{
-        axios.get(`http://localhost:3001/perfume/findbyid?id=${_id}`).then(function (response){
+        axios.get(`http://localhost:3001/perfume/findbyid?id=${_id}`)
+        .then(function (response){
             setProduct(response.data.data);
         })
         .catch(function (error) {

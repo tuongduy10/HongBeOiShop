@@ -1,4 +1,5 @@
-import React from 'react'
+import axios from 'axios';
+import React, { Component, useState } from 'react'
 import styled from 'styled-components'
 import '../pages/Style.css'
 
@@ -13,20 +14,36 @@ const Button = styled.button`
     cursor: pointer;
 `
 
-const Login = () => {
+export default function Login(){
+  const [username, setUsername] = useState({username:''});
+  const [password, setPassword] = useState({password:''});
+  
+  const bindingUsername = (event) =>{
+    setUsername({username: event.target.value})
+  }
+  const bindingPassword = (event) =>{
+    setPassword({password: event.target.value})
+  }
+  const login = () => {
+    axios.post('http://localhost:3001/Users/login', {username: username.username, password: password.password})
+      .then(function(result){
+
+      })
+      .catch(function(result){
+
+      })
+  }
+
   return (
     <div className="login-container">
         <div className="login-wrapper">
             <h1 className="title">Sign In</h1>         
-            <form className='login-f'>
-                <input placeholder='Username'></input>
-                <input placeholder='Password'></input>
-            <Button>Login</Button>
-
-            </form>
+            <div className='login-f'>
+                <input placeholder='Username' autoComplete='off' onChange={(e)=>bindingUsername(e)}></input>
+                <input placeholder='Password' type="password" autoComplete='off' onChange={(e)=>bindingPassword(e)}></input>
+                <Button onClick={() => login()}>Login</Button>
+            </div>
         </div>
     </div>
   )
 }
-
-export default Login

@@ -106,10 +106,10 @@ contact.find().then(function(item){
 users.find().then(function(item){
     if(item.length == 0 ){
         new users({
-            User_Name: "h04n9Bjj",
-            User_Password: "passla1",
+            User_Name: "user",
+            User_Password: "user",
             User_Email: "nhokbi35@gmail.com",
-            User_Address: "phường không số, phố không em",
+            User_Address: "đường không số, phố không em",
             User_Tele: "0984988888"
 
         }).save()
