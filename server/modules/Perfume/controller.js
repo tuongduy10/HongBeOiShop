@@ -13,7 +13,6 @@ module.exports.findall = function (req, res) {
 }
 module.exports.findbyid = function (req, res) {
     var id = req.query.id
-    console.log(id)
     PerfumeModel.findById(id)
         .then(function(result){
             res.json({status: "success", data: result})
@@ -23,12 +22,13 @@ module.exports.findbyid = function (req, res) {
         })
 }
 module.exports.add = function (req, res) {
+
     var name = req.body.name;
     var price = req.body.price;
     var image = req.body.image;
     var desciption = req.body.desciption;
     var type = req.body.type;
-    var gender = reg.body.gender;
+    var gender = req.body.gender;
 
     const Perfume = new PerfumeModel({
         Perfume_Name: name,
@@ -41,9 +41,11 @@ module.exports.add = function (req, res) {
 
     Perfume.save()
         .then(function(result){
+            console.log(result)
             res.json({status: "success", data: "Add successfully"})
         })
         .catch(function(error){
+            console.log(error)
             res.json({status: "error", data: error})
         })
 }
